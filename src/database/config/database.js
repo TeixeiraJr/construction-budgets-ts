@@ -8,6 +8,7 @@ dotenv.config({
 module.exports = {
     connectionLimit : 10,
     host     : process.env.DATABASE_HOST,
+    user     :process.env.DB_USERNAME,
     username : process.env.DB_USERNAME,
     password : process.env.DB_PASSWORD,
     database : process.env.DATABASE_NAME,

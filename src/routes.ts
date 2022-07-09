@@ -1,9 +1,11 @@
 import {Router} from 'express';
+import UserController from './controllers/UserController'
 
 const routes = Router();
 
-routes.get('./user/create', (req,res) => {
-    res.send('user created sucessfully');
-})
+routes.post('./user', UserController.create);
+routes.put('./user', UserController.update);
+routes.get('./user', UserController.list);
+routes.delete('./user', UserController.delete);
 
 export default routes;

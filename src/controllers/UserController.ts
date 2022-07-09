@@ -1,10 +1,10 @@
 import { Request, Response} from 'express';
-const {Users} = require('../database/repository/users');
+import Users from '../database/repository/users';
 
 export default {
     async create(req: Request, res: Response) {
         const users = await Users.create;
-        console.log('users', users);
+        res.send('users');
     },
 
     async update(req: Request, res: Response) {

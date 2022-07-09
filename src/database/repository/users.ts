@@ -13,6 +13,7 @@ interface user {
 
 export default {
     async create(params: user) {
+        console.log('><><><><><><><><><><><><><><><')
         let query = `
         INSERT INTO
         users
@@ -21,14 +22,15 @@ export default {
         email,
         password,
         company
+        )
         VALUES
-        'junior',
+        ('junior',
         'junior@junior.com',
         '1234',
-        'teixeira corp'
-        )`;
+        'teixeira corp')
+        `;
         connection.query(query, function (err, result, fields) {
-            if (err) throw err;
+            if (err) return err;
             if (result) return result;
         })
     },
